@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+    var str="2017-10-10 21:15:56";
+    String.prototype.format=function (temp) {
+        temp=temp||"{0}年{1}月{2}日 {3}时{4}分{5}秒";
+        var reg=/\d+/g;
+        var ary=this.match(reg);
+        reg =/(\d)/g;
+        var tempStr=temp.replace(reg,function ($0,$1) {
+            return ary[$1]
+        })
+        return tempStr;
+    }
+    console.log(str,format(temp));
+
+
+</script>
